@@ -15,4 +15,4 @@ after { puts; }                                                                 
 #######################################################################################
 
 restaurants_table = DB.from(:restaurants)
-rsvps_table = DB.from(:rsvps)
+reservations_table = DB.from(:reservations)
