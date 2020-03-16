@@ -12,13 +12,20 @@ DB.create_table! :restaurants do
   String :foundation
   String :location
 end
-DB.create_table! :rsvps do
+DB.create_table! :reservations do
   primary_key :id
   foreign_key :restaurant_id
   Boolean :going
   String :name
   String :email
   String :Number_guests, text: true
+end
+
+DB.create_table! :users do
+  primary_key :id
+  String :name
+  String :email
+  String :password
 end
 
 # Insert initial (seed) data
