@@ -36,22 +36,22 @@ restaurants_table.insert(name: "Maido",
                     foundation: "2017",
                     location: " 399 San Martin Street, Miraflores")
 
-events_table.insert(title: "Central", 
+restaurants_table.insert(name: "Central", 
                     description: "Virgilio Martinez's restaurant. 6th place in the top 50 restaurants around the world.",
-                    date: "2016",
+                    foundation: "2016",
                     location: "301 Pedro de Osma Street, Barranco")
 
-events_table.insert(title: "La Mar", 
+restaurants_table.insert(name: "La Mar", 
                     description: "The most famous ceviche in Peru. A very dynamic menu, that changes throughout the year.",
-                    date: "2017",
+                    foundation: "2017",
                     location: "770 Mariscal La Mar Miraflores")
 
-events_table.insert(title: "Panchita", 
+restaurants_table.insert(name: "Panchita", 
                     description: "Traditional peruvian food, the most traditional and legendary peruvian dishes.",
-                    date: "2015",
+                    foundation: "2015",
                     location: "298 Dos de Mayo Street, Miraflores")
 
-events_table.insert(title: "Isolina", 
+restaurants_table.insert(name: "Isolina", 
                     description: "The best tabern in Peru, a relaxed place in which you could taste the best dishes and drinks from Peru",
-                    date: "2017",
+                    foundation: "2017",
                     location: "101 San Martin Street, Barranco")

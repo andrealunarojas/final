@@ -16,3 +16,14 @@ after { puts; }                                                                 
 
 restaurants_table = DB.from(:restaurants)
 reservations_table = DB.from(:reservations)
+users_table = DB.from(:users)
+
+before do
+    @current_user = users_table.where(id: session["user_id"]).to_a[0]
+end
+
+get "/" do
+    puts restaurants_table.all
+    @restaurants = restaurant_table.all.to_a
+    view "restaurants"
+end

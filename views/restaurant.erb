@@ -1,0 +1,27 @@
+<div class="row">
+    <div class="col-sm-9">
+        <h1><%= @restaurants[:name] %></h1>
+        <p><%= @restaurants[:description] %></p>
+        <% for reservation in @reservations %>
+            <div class="media">
+                <% if reservations[:going] %>
+                    <i class="fas fa-thumbs-up fa-3x mr-3"></i>
+                <% else %>
+                    <i class="fas fa-thumbs-down fa-3x mr-3"></i>
+                <% end %>
+                <div class="media-body">
+                    <h5 class="mt-0"><%= @users_table.where(id: reservations[:user_id]).to_a[0][:name] %></h5>
+                    <%= reservations[:Number_guests] %>
+                </div>
+            </div>
+        <% end %>
+        <p class="mt-5">
+            <% if @current_user %>
+                <a href="/restaurants/<%= @restaurant[:id] %>/reservation/new" class="btn btn-primary">Book a table now!</a>
+            <% else %>
+                <a href="/logins/new" class="btn btn-danger">Please sign in to make a reservation</a>
+            <% end %>
+        </p>
+    </div>
+    
+</div>
