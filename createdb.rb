@@ -5,31 +5,46 @@ DB = Sequel.connect(connection_string)                                          
 #######################################################################################
 
 # Database schema - this should reflect your domain model
-DB.create_table! :events do
+DB.create_table! :restaurants do
   primary_key :id
-  String :title
+  String :name
   String :description, text: true
-  String :date
+  String :foundation
   String :location
 end
 DB.create_table! :rsvps do
   primary_key :id
-  foreign_key :event_id
+  foreign_key :restaurant_id
   Boolean :going
   String :name
   String :email
-  String :comments, text: true
+  String :Number_guests, text: true
 end
 
 # Insert initial (seed) data
-events_table = DB.from(:events)
+restaurants_table = DB.from(:restaurants)
 
-events_table.insert(title: "Bacon Burger Taco Fest", 
-                    description: "Here we go again bacon burger taco fans, another Bacon Burger Taco Fest is here!",
-                    date: "June 21",
-                    location: "Kellogg Global Hub")
+restaurants_table.insert(name: "Maido", 
+                    description: "Nikkei gastronomy combined with peruvian flavors",
+                    foundation: "2017",
+                    location: " 399 San Martin Street, Miraflores")
 
-events_table.insert(title: "Kaleapolooza", 
-                    description: "If you're into nutrition and vitamins and stuff, this is the event for you.",
-                    date: "July 4",
-                    location: "Nowhere")
+events_table.insert(title: "Central", 
+                    description: "Virgilio Martinez's restaurant. 6th place in the top 50 restaurants around the world.",
+                    date: "2016",
+                    location: "301 Pedro de Osma Street, Barranco")
+
+events_table.insert(title: "La Mar", 
+                    description: "The most famous ceviche in Peru. A very dynamic menu, that changes throughout the year.",
+                    date: "2017",
+                    location: "770 Mariscal La Mar Miraflores")
+
+events_table.insert(title: "Panchita", 
+                    description: "Traditional peruvian food, the most traditional and legendary peruvian dishes.",
+                    date: "2015",
+                    location: "298 Dos de Mayo Street, Miraflores")
+
+events_table.insert(title: "Isolina", 
+                    description: "The best tabern in Peru, a relaxed place in which you could taste the best dishes and drinks from Peru",
+                    date: "2017",
+                    location: "101 San Martin Street, Barranco")
