@@ -1,0 +1,14 @@
+
+<h1>Book a table for <%= @restaurants[:name] %></h1>
+
+<form action="/restaurants/<%= @restaurant[:id] %>/bookatable/new">
+  <div class="form-group">
+    <label>How many people are going??</label>
+    <textarea class="form-control" rows="3" name="Number_Guests"></textarea>
+  </div>
+  <div class="form-group">
+    <label>Which hour do you prefer to go?</label>
+    <textarea class="form-control" rows="3" name="Hour"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

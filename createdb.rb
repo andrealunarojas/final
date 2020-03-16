@@ -15,10 +15,10 @@ end
 DB.create_table! :reservations do
   primary_key :id
   foreign_key :restaurant_id
-  Boolean :going
   String :name
   String :email
   String :Number_guests, text: true
+  String :Hour
 end
 
 DB.create_table! :users do
