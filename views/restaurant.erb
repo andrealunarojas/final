@@ -4,7 +4,6 @@
         <p><%= @restaurant[:description] %></p>
         <p><%= @restaurant[:location] %></p>
         <p><%= @restaurant[:foundation] %></p>
-
         <p class="mt-5">
             <% if @current_user %>
                 <a href="/restaurants/<%= @restaurant[:id] %>/reservation/new" class="btn btn-primary">Book a table now!</a>
