@@ -1,5 +1,6 @@
 # Set up for the application and database. DO NOT CHANGE. #############################
-require "sinatra"                                                                     #
+require "sinatra"
+require "sinatra/cookies"                                                             #
 require "sinatra/reloader" if development?                                            #
 require "sequel"                                                                      #
 require "logger"                                                                      #
@@ -28,10 +29,18 @@ get "/" do
     view "restaurants"
 end
 
-get "/restaurants/:id/reservation/new" do
-    @restaurants = restaurants_table.where(id: params[:id]).to_a[0]
+get "/restaurants/:id" do
+    @restaurant = restaurants_table.where(id: params[:id]).to_a[0]
+    @reservation = reservations_table.where(restaurants_id: @restaurant[:id])
+    @users_table = users_table
+    view "restaurant"
+end
+
+get "/restaurants/:id/reservations/new" do
+    @restaurant = restaurants_table.where(id: params[:id]).to_a[0]
     view "new_reservation"
 end
+
 
 get "/events/:id/reservation/create" do
     puts params

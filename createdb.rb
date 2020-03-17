@@ -15,7 +15,7 @@ end
 DB.create_table! :reservations do
   primary_key :id
   foreign_key :restaurants_id
-  foreign_key : users_id
+  foreign_key :users_id
   String :name
   String :email
   String :Number_guests, text: true
